@@ -1,70 +1,50 @@
-window.onload = async () => {
-    const userIdInput = document.getElementById("userid");
-    const categoryInput = document.getElementById("category");
-    const priorityInput = document.getElementById("priority");
-    const descriptionInput = document.getElementById("description");
-    const deadlineInput = document.getElementById("deadline");
-    const createForm = document.getElementById("create-form");
+<!DOCTYPE html>
+<html lang="en">
 
-    try {
-        // Fetch user and category data to populate the dropdowns
-        const [userData, categoryData] = await Promise.all([
-            fetch("http://localhost:8083/api/users").then(res => res.json()),
-            fetch("http://localhost:8083/api/categories").then(res => res.json())
-        ]);
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/styles/styles.css">
+    <title>Create New ToDo</title>
+</head>
 
-        // Populate user dropdown
-        userData.forEach(user => {
-            const option = document.createElement("option");
-            option.value = user.id;
-            option.textContent = user.username;
-            userIdInput.appendChild(option);
-        });
+<body>
 
-        // Populate category dropdown
-        categoryData.forEach(category => {
-            const option = document.createElement("option");
-            option.value = category.id;
-            option.textContent = category.name;
-            categoryInput.appendChild(option);
-        });
-    } catch (error) {
-        console.error("Error fetching user or category data:", error.message);
-    }
+    <nav>
+        <ul>
+            <li><a href="/newUser.html">Register</a></li>
+        </ul>
+        <ul>
+            <li><a href="/index.html">Homepage</a></li>
+        </ul>
+    </nav>
 
-    createForm.addEventListener("submit", async (event) => {
-        event.preventDefault();
+    <h1>Create New ToDo Task</h1>
 
-        const formData = {
-            userid: userIdInput.value,
-            category: categoryInput.value,
-            priority: priorityInput.value,
-            description: descriptionInput.value,
-            deadline: deadlineInput.value,
-            completed: false
-        };
+    <form id="create-form">
+        <label for="userid"> User:</label>
+        <select id="userid"></select>
 
-        try {
-            const response = await fetch("http://localhost:8083/api/todos", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(formData)
-            });
+        <label for="category"> Category:</label>
+        <select id="category"></select>
 
-            if (!response.ok) {
-                const errorText = await response.text();
-                console.error(`Failed to create new ToDoTask: ${errorText}`);
-                return;
-            }
+        <label for="priority"> Priority:</label>
+        <select id="priority">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
 
-            const newToDoTask = await response.json();
-            console.log("New ToDoTask created:", newToDoTask);
+        <label for="description"> Description:</label>
+        <input type="text" id="description"></input>
 
-            // Optionally, redirect to a success page or update the UI
-        } catch (error) {
-            console.error("Error creating new ToDoTask:", error.message);
-        }
-    });
-};
+        <label for="deadline"> Deadline:</label>
+        <input type="text" id="deadline" placeholder="YYYY-MM-DD"></input>
+
+        <button type="submit">Add ToDo</button>
+    </form>
+
+    <script src="/assets/scripts/newToDo.js"></script>
+</body>
+
+</html>

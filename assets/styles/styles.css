@@ -1,0 +1,17 @@
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 50px;
+}
+
+nav ul{
+    display: flex !important;
+    float:inline-end;
+    list-style: none;
+    justify-content: space-around;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
