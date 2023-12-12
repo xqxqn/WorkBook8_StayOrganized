@@ -15,14 +15,21 @@
             <li><a href="/newUser.html">Register</a></li>
         </ul>
         <ul>
+            <li><a href="/toDos.html">ToDos</a></li>
+        </ul>
+        <ul>
             <li><a href="/index.html">Homepage</a></li>
         </ul>
+        
     </nav>
     <h1>To-Do Tasks</h1>
-    <label for="userDropdown">Select User:</label>
+    <div class="task-dropdown">
+        <label for="userDropdown">Select User:</label>
     <select id="userDropdown"></select>
     <button onclick="getTasks()">Get Tasks</button>
     <div id="tasksContainer"></div>
+    </div>
+    
     
     <script src="/assets/scripts/toDos.js"></script>
   </body>

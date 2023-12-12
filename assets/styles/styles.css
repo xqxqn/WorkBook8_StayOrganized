@@ -1,3 +1,11 @@
+body {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color:beige;
+    color: #333;
+}
+
 nav {
     background-color: #333;
     color: #fff;
@@ -14,4 +22,60 @@ nav ul{
 nav a {
     text-decoration: none;
     color: #fff;
+}
+
+h1 {
+    color:#333;
+    text-align: center;
+    justify-content: center;
+}
+
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    
+}
+button {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+.bkg-img {
+    filter:blur(5px);
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.container {
+    background-size: cover;
+    width: 100vw;
+    height: 80vh;
+    filter:blur(5px);
+    /* background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)); */
+    background-position:center;
+    background-attachment: fixed;
+    margin-bottom: 60px;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+index-text {
+    margin: auto;
+}
+
+.task-dropdown {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
 }
