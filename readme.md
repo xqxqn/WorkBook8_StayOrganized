@@ -19,13 +19,13 @@ Stay Organized is a web application that allows users to keep track of a list of
 ## Pages
 
 - `index.html`: A home page that highlights the "Stay Organized" website.
-![Homepage] (assets/images/homepage.png)
+![Homepage](assets/images/homepage.png)
 - `todos.html`: A page for viewing all ToDo tasks for a specific user by selecting from a dropdown menu.
-![ToDos] (assets/images/toDos.png)
+![ToDos](assets/images/toDos.png)
 - `newUser.html`: A page to create a new user.
-![NewUser] (assets/images/newUser.png)
+![NewUser](assets/images/newUser.png)
 - `newTodos.html`: A page to add new ToDo tasks.
-![newTodos] (assets/images/newToDo.png)
+![newTodos](assets/images/newToDo.png)
 
 
 ## Setup
